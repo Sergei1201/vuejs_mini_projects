@@ -1,10 +1,34 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{name: 'home'}">Home</router-link> |
+    <router-link :to="{name: 'about'}">About</router-link>
+    <router-link :to="{name: 'jobs'}">Jobs</router-link>
   </nav>
+
+  <button @click="redirect">Redirect</button>
+  <button @click="back">Go Back</button>
+  <button @click="forward">Go Forward</button>
+
   <router-view/>
 </template>
+
+<script>
+export default {
+  methods: {
+    redirect() {
+      this.$router.push({name: 'home'})
+
+    },
+    back() {
+      this.$router.go(-1)
+
+    },
+    forward() {
+      this.$router.go(1)
+    }
+  }
+}
+</script>
 
 <style>
 #app {
@@ -21,10 +45,28 @@ nav {
 
 nav a {
   font-weight: bold;
+  border: #42b983;
   color: #2c3e50;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+  background: #42b983;
+}
+button:hover {
+  color: blue
 }
 </style>

@@ -1,0 +1,8 @@
+ {
+     "jobs": [
+                {"title": "Front end developer", "id": 1, "details": "Creating front end applications with various programming languages and technologies"},
+               {"title": "Back end developer", "id": 2, "details": "Creating back end applications with various programming languages and technologies"},
+               {"title": "Full stack developer", "id": 3, "details": "Creating full stack applications with various programming languages and technologies"}
+            ]
+
+ }
